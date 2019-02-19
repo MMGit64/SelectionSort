@@ -7,30 +7,30 @@ public class SelectionSort {
 		
 		for (int i = 0; i < list.length; i++) {
 			
-			double currentMin = list[i];			//The current minimum number in the list
+			double currentMinElement = list[i];			//The current minimum number in the list
 			int currentMinIndex = i;				//The index of that minimum number
 
 			
 			for (int j = i + 1; j < list.length; j++) {		//Consider the number after 'current minimum number'
 				
-				if (currentMin > list[j]) {					//If the i value (list[i]) is a larger number than j value (list[j])
-					currentMin = list[j];					//The 'currentMin' variable is now assigned to list[j]
-					currentMinIndex = j;					//And the currentMinIndex variable to j
+				if (currentMinElement > list[j]) {			//If the i value (list[i]) is a larger number than j value (list[j])
+					currentMinElement = list[j];			//The 'currentMin' variable is now assigned to list[j], as we've now established that list[i] is larger value than list[j].
+					currentMinIndex = j;					//And the currentMinIndex variable to j, effectively we have swapped list[i] with list [j] & index i with index j respectively
 				
 				}
 			}
 		
-			if (currentMinIndex != i) {						//We then consider the next unsorted number, for instance if 'k' is the current minimum index instead of i;
+			if (currentMinIndex != i) {						//We then consider the next unsorted number
 				
-				list[currentMinIndex] = list[i];			//Then list[k] = list[i]
-				list[i] = currentMin;						//And list[i] = k
-			}												//Now the program will compare k value with j value 
+				list[currentMinIndex] = list[i];			//Swap the minimum number with next unsorted number
+				list[i] = currentMinElement;				
+			}												 
 		
 		
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {				//Main method
 		
 		double[] numList = {4, 3, 20, 9, 5};
 		
@@ -49,4 +49,5 @@ public class SelectionSort {
 		
 	}
 }
+
 
